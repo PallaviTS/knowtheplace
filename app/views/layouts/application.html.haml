@@ -1,0 +1,50 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Knowtheplace
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    .navbar.navbar-default
+      .navbar-header
+        %button.navbar-toggle.collapsed{"data-target" => ".navbar-inverse-collapse", "data-toggle" => "collapse", :type => "button"}
+          %i.fa.fa-bars
+          Menu
+        %a.navbar-brand.text-hide{:href => "#", :target => "_blank"}
+          Know the Place
+      .navbar-collapse.collapse.navbar-inverse-collapse
+        %ul.nav.navbar-nav.nav-left
+          %li.test-home-top-menu-item
+            %a Home
+          %li.active.test-customer-groups-top-menu-item
+            %a.dropdown-toggle{"data-toggle" => "dropdown"}
+              Lorem Cursus
+              %b.caret
+            %ul.dropdown-menu{:role => "menu"}
+              %li
+                %a{:href => "#"}
+                  Lorem Cursus
+              %li
+                %a{:href => "#"}
+                  Lorem Cursus
+              %li
+                %a{:href => "#"}
+                  Lorem Cursus
+              %li.arrow
+        %ul.nav.navbar-nav.navbar-right.navbar-toplinks
+          %li
+            %a{:href => "#", :target => "_blank"} Lorem Cursus
+          %li
+            %a Lorem Cursus
+          %li
+            %a{:href => "#"}
+              Lorem Cursus
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              me me me!
+              %b.caret
+    = yield
+    %script{:async => "", :defer => "", :src => "https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"}
